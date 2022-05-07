@@ -1,5 +1,5 @@
 from django.urls import path
-from services.views import get_stylists_page
+from stylists.views import get_stylists_page
 
 
 urlpatterns = [

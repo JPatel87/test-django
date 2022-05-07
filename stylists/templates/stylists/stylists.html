@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylists page</title>
+</head>
+<body>
+    <h1>Stylists</h1>
+    <div class="stylists">
+        {% for stylist in stylists %}
+            <div class="stylist">
+                <h2>{{ stylist.first_name }}</h2>
+                <img src="{{ stylist.image.url  }}" alt="hairdresser photo">
+                <p>{{ stylist.background }}</p>
+            <div>
+        {% endfor %}
+    </div>
+</body>
+</html>

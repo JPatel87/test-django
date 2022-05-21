@@ -1,0 +1,108 @@
+body {
+    background-color: white
+}
+
+h1 {
+    display: inline;
+}
+
+.navbar, .dropdown-menu, footer {
+    background-color: #faeee9
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar-brand, .nav-link, .dropdown-item {
+    color: #735366;
+}
+
+.navbar-brand {
+    font-size: lg;
+}
+
+.navbar-brand:hover {
+    color: #4e5865;
+}
+
+.nav-link, .dropdown-item {
+    font-family:'Montserrat', sans-serif;
+}
+
+.social:hover {
+    color: #4e5865;
+    background-color: none;
+}
+
+.navbar a {
+    border-bottom: 1px solid transparent;
+}
+
+.active, .nav-link:hover, .dropdown-item:hover, .card-text:hover {
+    border-bottom: 1px solid #4e5865;
+}
+
+.social {
+    color: #735366;
+}
+
+.bi-envelope, .bi-facebook, .bi-instagram, .bi-twitter {
+    font-size: 1.5rem;
+}
+
+.hero-image {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.services-card, .services-link {
+    font-family:'Montserrat', sans-serif;
+    background-color: #faeee9;
+    color: #735366;
+}
+
+.caption {
+    font-family: 'Playfair Display', serif;
+    background-color: #4e5865;
+    color: #faeee9;
+    text-transform: capitalize;
+}
+
+.services-btn {
+    background-color: #735366;
+    color: #faeee9;
+}
+
+.services-btn:hover {
+    background-color: #4e5865;
+    color: #faeee9;
+}
+
+.contact {
+    font-family:'Montserrat', sans-serif;
+    background-color: #4e5865;
+    color: #faeee9;
+}
+
+.contact-btn {
+    background-color: #faeee9;
+    color: #735366;
+    text-transform: uppercase;
+}
+
+.contact-number:hover {
+    color: #faeee9;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        font-size: 7rem;
+    }
+
+    .caption {
+        font-size: 2.8rem;
+    }
+
+}

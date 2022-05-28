@@ -1,33 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Services</h1>
-    <div class="cut_services">
-        <h2>Cut</h2>
-        {% for service in cut_services %}
-            <h3>{{ service.name }}</h3>
-            <h3>£{{ service.price }}</h3>
-        {% endfor %}
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--services summary-->
+<section class="py-3 pt-0">
+    <div class="container-fluid my-3 border-0">
+        <div class="card text-center border-0">
+            <div class="card-header page-header h2 rounded-0">our services</div>
+            <div class="card-body services-body fs-6 p-0 mb-0 pt-4">
+                <p class="card-text">At Locks of Lush we provide an array of services to suit female clients of all hair types.</p>
+                <p>Whether you are looking for a simple wash and cut or a complete restyle with colour,
+                we can help get your hair feeling revitalised and looking lock-urious!</p>
+                <p>Check out our range of services below...</p>
+            </div>
+        </div>
+    </div>    
+</section>
+
+<!--services details-->
+<section class="py-4 service-details-container mb-4">
+    <div class="container-fluid px-0">
+        <div class="row text-center w-100 g-4 mx-0">
+            <div class="col-sm-12 col-md-4">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed fs-5" id="cut" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Cut
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body cut-services fs-5">
+                                {% for service in cut_services %}
+                                    <p><strong>{{ service.name }}</strong></p>
+                                    <p>£{{ service.price }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed fs-5" id="colour" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Colour
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body colour-services fs-5">
+                                {% for service in colour_services %}
+                                    <p><strong>{{ service.name }}</strong></p>
+                                    <p>£{{ service.price }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed fs-5" id="style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Style
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body style-services fs-5">
+                                {% for service in style_services %}
+                                    <p><strong>{{ service.name }}</strong></p>
+                                    <p>£{{ service.price }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="colour_services">
-        <h2>Colour</h2>
-        {% for service in colour_services %}
-            <h3>{{ service.name }}</h3>
-            <h3>£{{ service.price }}</h3>
-        {% endfor %}
-    </div>
-    <div class="style_services">
-        <h2>Style</h2>
-        {% for service in style_services %}
-            <h3>{{ service.name }}</h3>
-            <h3>£{{ service.price }}</h3>
-        {% endfor %}
-    </div>
-</body>
-</html>
+</section>
+
+{% endblock %}

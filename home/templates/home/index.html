@@ -23,7 +23,7 @@
                     <h5 class="card-title mb-0 p-2 services-card">Cut</h5>
                     <img src="{% static 'images/cut-6.jpg' %}" alt="stylist cutting a womans hair">
                     <div class="card-body services-link">
-                        <a href="#" class="btn card-text services-btn text-decoration-none">Find out more</a>
+                        <a href="{% url 'services' %}#cut" class="btn card-text action-btn text-decoration-none">Find out more</a>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <h5 class="card-title mb-0 p-2 services-card">Colour</h5>
                     <img src="{% static 'images/colour-1.jpg' %}" alt="stylist colouring another womans hair">
                     <div class="card-body services-link">
-                        <a href="#" class="btn card-text services-btn text-decoration-none">Find out more</a>
+                        <a href="{% url 'services' %}#colour" class="btn card-text action-btn text-decoration-none">Find out more</a>
                     </div>
                 </div>
             </div>
@@ -41,32 +41,12 @@
                     <h5 class="card-title mb-0 p-2 services-card">Style</h5>
                     <img src="{% static 'images/style-1.jpg' %}" alt="woman with curly hair">
                     <div class="card-body services-link">
-                        <a href="#" class="btn card-text services-btn text-decoration-none">Find out more</a>
+                        <a href="{% url 'services' %}#style" class="btn card-text action-btn text-decoration-none">Find out more</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-<!--contact details-->
-<section class="py-4">
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-sm-12">
-                <div class="card border-0">
-                    <div class="card-body contact">
-                        <h5 class="card-title">Contact us</h5>
-                        <h6 class="card-text contact">81 Hair Way, Watford, London, HA9 7GH</h6>
-                        <h6 class="card-text contact contact-number">Tel: 020 1904 001</h6><br>
-                        <h5 class="card-text contact">Opening times</h6>
-                        <h6 class="card-text contact">Mon-Sat: 10am-5pm, Sun: closed</h6><br>
-                        <a href="#" class="btn contact-btn">Book now!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <div>
 </section>
 
 {% endblock %}

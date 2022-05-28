@@ -1,21 +1,30 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
-
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
-
+<!--log out section-->
+<section class="py-3 pt-0">
+  <div class="container-fluid border-0">
+      <div class="card text-center border-0">
+          <div class="form-container fs-6 p-0 mb-0 pt-4">
+            <div class="sign-up-container">
+              <div class="card-header page-header h2 rounded-0 header-text mb-3">Log out</div>
+              <p>{% trans 'Are you sure you want to log out?' %}</p>
+              <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                {% endif %}
+                <button type="submit" class="btn card-text action-btn text-decoration-none mb-3 px-5">{% trans 'Log out' %}</button>
+              </form>
+            </div>
+          </div>
+      </div>
+  </div>
+</section>
 
 {% endblock %}

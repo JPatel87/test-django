@@ -1,5 +1,8 @@
+/* base.html styles */
+
 body {
-    background-color: white
+    background-color: white;
+    font-family:'Montserrat', sans-serif;
 }
 
 h1 {
@@ -26,10 +29,6 @@ h1 {
     color: #4e5865;
 }
 
-.nav-link, .dropdown-item {
-    font-family:'Montserrat', sans-serif;
-}
-
 .social:hover {
     color: #4e5865;
     background-color: none;
@@ -39,7 +38,7 @@ h1 {
     border-bottom: 1px solid transparent;
 }
 
-.active, .nav-link:hover, .dropdown-item:hover, .card-text:hover {
+.active, .nav-link:hover, .dropdown-item:hover {
     border-bottom: 1px solid #4e5865;
 }
 
@@ -51,13 +50,15 @@ h1 {
     font-size: 1.5rem;
 }
 
+
+/* index.html styles */
+
 .hero-image {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
 .services-card, .services-link {
-    font-family:'Montserrat', sans-serif;
     background-color: #faeee9;
     color: #735366;
 }
@@ -69,32 +70,120 @@ h1 {
     text-transform: capitalize;
 }
 
-.services-btn {
+.action-btn {
     background-color: #735366;
     color: #faeee9;
+    text-transform: uppercase;
 }
 
-.services-btn:hover {
+.action-btn:hover {
     background-color: #4e5865;
     color: #faeee9;
 }
 
 .contact {
-    font-family:'Montserrat', sans-serif;
     background-color: #4e5865;
     color: #faeee9;
 }
 
-.contact-btn {
+.book-btn {
     background-color: #faeee9;
     color: #735366;
     text-transform: uppercase;
 }
 
-.contact-number:hover {
+.book-btn:hover {
     color: #faeee9;
+    background-color: #735366;
     text-decoration: none;
 }
+
+/* services page styles */
+
+.page-header {
+    font-family: 'Playfair Display', serif;
+    background-color: #4e5865;
+    color: #faeee9;
+    text-transform: capitalize;
+}
+
+.services-body {
+    background-color: #faeee9;
+    color: #4e5865;
+}
+
+.service-details-container {
+    background-color: #735366;
+}
+
+.accordion-button {
+    background-color: #faeee9;
+    color: #4e5865;
+}
+
+.accordion-body {
+    background-color: #faeee9;
+    color: #4e5865;
+}
+
+/* stylist page styles */
+
+.stylist-name {
+    color: #735366;
+}
+
+.stylist-image {
+    width: 80%;
+    border-radius: 50%;
+}
+
+.stylist-background {
+    color: #4e5865;
+}
+
+/* log in page styles */
+
+.sign-up-prompt {
+    color: #735366;
+}
+
+.sign-up-prompt:hover {
+    color: #4e5865;
+}
+
+/* login/sign in page styles */
+
+.sign-up-container {
+    width: 95%;
+    clear: both;
+    background-color: #faeee9;
+}
+
+.header-text {
+    width: 100%;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up-container input {
+    width: 90%;
+    clear: both;
+}
+
+.log-in-prompt {
+    color: #735366;
+}
+
+.log-in-prompt:hover {
+    color: #4e5865;
+}
+
+
+/* media queries */
 
 @media (min-width: 768px) {
     .navbar-brand {
@@ -104,5 +193,22 @@ h1 {
     .caption {
         font-size: 2.8rem;
     }
+
+    .sign-up-container {
+    width: 50%;
+
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+        font-size: 7rem;
+    }
+
+    .caption {
+        font-size: 2.8rem;
+    }
+
+    .sign-up-container {
+    width: 35%;
 
 }

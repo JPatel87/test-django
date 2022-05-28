@@ -1,21 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylists page</title>
-</head>
-<body>
-    <h1>Stylists</h1>
-    <div class="stylists">
-        {% for stylist in stylists %}
-            <div class="stylist">
-                <h2>{{ stylist.first_name }}</h2>
-                <img src="{{ stylist.image.url  }}" alt="hairdresser photo">
-                <p>{{ stylist.background }}</p>
-            <div>
-        {% endfor %}
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--stylists summary-->
+<section class="py-3 pt-0">
+    <div class="container-fluid my-3 border-0">
+        <div class="card text-center border-0">
+            <div class="card-header page-header h2 rounded-0">our stylists</div>
+            <div class="card-body services-body fs-6 p-0 mb-0 pt-4">
+                <p class="card-text">At Locks of Lush we have over 20 years experience in hairdressing.</p>
+                <p>We aim to deliver honest, friendly and professional customer service to take care of all your hair care needs.</p>
+                <p>Check out our team of stylists below...</p>
+            </div>
+        </div>
+    </div>    
+</section>
+
+<!--stylists details-->
+
+<section class="py-3">
+    <div class="container">
+        <div class="row text-center g-4">
+            {% for stylist in stylists %}
+            <div class="col-md">
+                <div class="card border-0 mx-auto" style="width: 20rem;">
+                    <img src="{{ stylist.image.url }}" class="card-img-top stylist-image mx-auto" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title stylist-name">
+                        <strong>{{ stylist.first_name }}</strong>
+                        </h5>
+                        <p class="card-text stylist-background">{{ stylist.background_details }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div> 
     </div>
-</body>
-</html>
+</section>
+
+{% endblock %}

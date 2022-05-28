@@ -9,8 +9,8 @@ class Stylist(models.Model):
     first_name = models.CharField(max_length=50, unique=True)
     last_name = models.CharField(max_length=50)
     telephone = PhoneNumberField(default='')
-    email = models.EmailField(max_length=254, default='')
-    background = models.TextField(default='')
+    years_experience = models.PositiveIntegerField(default=1)
+    background_details = models.CharField(max_length=250, default='')
     image = CloudinaryField('image', default='')
 
     def __str__(self):

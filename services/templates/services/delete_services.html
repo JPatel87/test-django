@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--services summary-->
+<section class="py-3 pt-0">
+    <div class="container-fluid border-0">
+        <div class="card text-center border-0">
+            <div class="form-container fs-6 p-0 mb-0 pt-4">
+              <div class="sign-up-container">
+                <div class="card-header page-header h2 rounded-0 header-text mb-3">Delete services</div>
+                  <form method="POST">
+                    {% csrf_token %}
+                    <p class="lead">Are you sure you want to delete</p>
+                    <p class="h5">{{ service.name }}?</p><br>
+                    <button class="btn card-text action-btn text-decoration-none mb-3 px-4 mx-2" type="submit">Delete</button>
+                    <a href="{{ services_url }}" class="btn card-text action-btn text-decoration-none mb-3 px-4 mx-2">Cancel</a>
+                  </form>
+                    </form>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+{% endblock %}

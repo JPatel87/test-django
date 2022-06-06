@@ -1,7 +1,9 @@
 from django.urls import path
-from bookings.views import get_bookings_page, manage_bookings_page
+from bookings.views import get_timeslot_page, get_bookings_page, edit_timeslot_page, delete_timeslot_page
 
 urlpatterns = [
-    path('create/', get_bookings_page, name='create_booking'),
-    path('manage/', manage_bookings_page, name='manage_booking')
+    path('', get_bookings_page, name='bookings'),
+    path('create/timeslot/', get_timeslot_page, name='create_timeslot'),
+    path('edit/<timeslot_id>', edit_timeslot_page, name='edit_timeslot'),
+    path('delete/<timeslot_id>', delete_timeslot_page, name='delete_timeslot')
 ]

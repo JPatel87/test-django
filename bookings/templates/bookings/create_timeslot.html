@@ -9,11 +9,11 @@
         <div class="card text-center border-0">
             <div class="form-container fs-6 p-0 mb-0 pt-4">
               <div class="sign-up-container">
-                <div class="card-header page-header h2 rounded-0 header-text mb-3">Book</div>
-                    <form action="{% url 'create_booking' %}" method="post">
+                <div class="card-header page-header h2 rounded-0 header-text mb-3">Add timeslot</div>
+                    <form action="{% url 'create_timeslot' %}" method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button class="btn card-text action-btn text-decoration-none mb-3 px-4" type="submit">Book</button>
+                        <button class="btn card-text action-btn text-decoration-none mb-3 px-4" type="submit">Add</button>
                     </form>
               </div>
             </div>

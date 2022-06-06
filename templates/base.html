@@ -47,10 +47,10 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   {% if user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'create_booking' %}">New booking</a>
+                    <a class="nav-link" href="{% url 'create_timeslot' %}">Add timeslot</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'manage_booking' %}">Manage booking</a>
+                    <a class="nav-link" href="{% url 'bookings' %}">Manage booking</a>
                   </li>
                   {% else %}
                   <li class="nav-item">
@@ -62,7 +62,7 @@
                   {% endif %}
                   {% if user.is_superuser %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add_services' %}">Edit services</a>
+                    <a class="nav-link" href="{% url 'add_services' %}">Add services</a>
                   </li>
                   {% endif %}
                 </ul>
@@ -101,9 +101,9 @@
                       <h5 class="card-text contact"><strong>Opening Times</strong></h6>
                       <h6 class="card-text contact">Mon-Sat: 10am-5pm, Sun: closed</h6><br>
                       {% if user.is_authenticated %}
-                      <a href="{% url 'create_booking' %}" class="btn book-btn"><strong>Book now!</strong></a>
+                      <a href="#" class="btn book-btn"><strong>Book now!</strong></a>
                       {% else %}
-                      <a href="{% url 'account_signup' %}" class="btn book-btn"><strong>Book now!</strong></a>
+                      <a href="#" class="btn book-btn"><strong>Book now!</strong></a>
                       {% endif %} 
                   </div>
               </div>

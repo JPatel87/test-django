@@ -182,6 +182,23 @@ h1 {
     color: #4e5865;
 }
 
+/* edit/delete link styles */
+
+.edit-delete-link {
+    color: #735366;
+    text-transform: capitalize;
+}
+
+.edit-delete-link:hover {
+    color: #4e5865;
+    font-size: 120%;
+}
+
+/* Manage bookings page */
+
+.table-text {
+    color: #4e5865;
+}
 
 /* media queries */
 

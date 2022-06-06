@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!--services summary-->
+<section class="py-3 pt-0">
+    <div class="container-fluid my-3 border-0">
+        <div class="card text-center border-0">
+            <div class="card-header page-header h2 rounded-0">Bookings</div>
+            <div class="card-body services-body fs-6 p-0 mb-0 pt-4">
+                <table class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="table-text">User</th>
+                            <th scope="col" class="table-text">Client</th>
+                            <th scope="col" class="table-text">Service</th>
+                            <th scope="col" class="table-text">Appointment</th>
+                            <th scope="col" class="table-text">Edit/Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for timeslot in timeslots %}
+                          <tr>
+                            <td class="table-text">{{ timeslot.user }}</td>
+                            <td class="table-text">{{ timeslot.first_name|title }} {{ timeslot.last_name|title }}</td>
+                            <td class="table-text">{{ timeslot.service }}</td>
+                            <td class="table-text">{{ timeslot.date }}, {{ timeslot.get_time_display }}, {{timeslot.stylist}}</td>
+                            <td> 
+                              {% if timeslot.Is_Past %}
+                              <a href="edit/{{ timeslot.id }}" class="btn card-text action-btn text-decoration-none m-2">Edit</a>
+                              <a href="delete/{{ timeslot.id }}" class="btn card-text action-btn text-decoration-none">Delete</a>
+                              {% endif %}
+                              {% if timeslot.Is_Past != True%}
+                              <p>This booking is non-editable</p>
+                              {% endif %}
+                            </td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </table>
+            </div>
+        </div>
+    </div>    
+</section>
+
+{% endblock %}

@@ -1,13 +1,14 @@
 from django.contrib import admin
-from .models import Appointment, TimeSlot
+from .models import Timeslot, Booking
 
 # Register your models here.
 
-@admin.register(TimeSlot)
-class TimeSlotAdmin(admin.ModelAdmin):
-    list_display = ('date', 'time', 'stylist')
+@admin.register(Timeslot)
+class TimeslotAdmin(admin.ModelAdmin):
+    list_display = ('date', 'time', 'stylist', 'first_name', 'last_name', 'service')
+    # readonly_fields =('user',)
 
 
-@admin.register(Appointment)
-class AppointmentAdmin(admin.ModelAdmin):  
-    list_display = ('first_name', 'last_name', 'service', 'appointment')
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):  
+    list_display = ('first_name', 'last_name', 'service', 'timeslot')

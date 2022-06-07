@@ -14,7 +14,9 @@
                     <table class="table table-hover">
                         <thead>
                           <tr>
+                            {% if user.is_superuser %}
                             <th scope="col" class="table-text">User</th>
+                            {% endif %}
                             <th scope="col" class="table-text">Client</th>
                             <th scope="col" class="table-text">Service</th>
                             <th scope="col" class="table-text">Appointment</th>
@@ -24,7 +26,9 @@
                         <tbody>
                         {% for timeslot in timeslots %}
                           <tr>
+                            {% if user.is_superuser %}
                             <td class="table-text">{{ timeslot.user }}</td>
+                            {% endif %}
                             <td class="table-text">{{ timeslot.first_name|title }} {{ timeslot.last_name|title }}</td>
                             <td class="table-text">{{ timeslot.service }}</td>
                             <td class="table-text">{{ timeslot.date }}, {{ timeslot.get_time_display }}, {{timeslot.stylist}}</td>
@@ -34,7 +38,7 @@
                               <a href="delete/{{ timeslot.id }}" class="btn card-text action-btn text-decoration-none">Delete</a>
                               {% endif %}
                               {% if timeslot.Is_Past != True%}
-                              <p>This booking is non-editable</p>
+                              <p>Booking cannot be ammended</p>
                               {% endif %}
                             </td>
                           </tr>
